@@ -49,8 +49,8 @@ const StatsCards = ({
       {stats.map((stat) => {
         const Icon = stat.icon;
         return (
-          <Card key={stat.title} className="gap-2">
-            <CardHeader className="flex flex-row items-center gap-2 space-y-0 pb-2">
+          <Card key={stat.title} className="gap-0 md:gap-2">
+            <CardHeader className="flex flex-row items-center gap-2 space-y-0 px-4 pb-2 md:px-6">
               <div className="bg-primary/10 flex h-8 w-8 items-center justify-center rounded-full">
                 <Icon className="text-primary h-4 w-4" />
               </div>
@@ -58,8 +58,8 @@ const StatsCards = ({
                 {stat.title}
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stat.value}</div>
+            <CardContent className="px-4 md:px-6">
+              <div className="text-lg font-bold md:text-2xl">{stat.value}</div>
             </CardContent>
           </Card>
         );

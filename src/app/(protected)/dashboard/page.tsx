@@ -47,7 +47,6 @@ const DashboardPage = async ({ searchParams }: DashboardPageProps) => {
     redirect("/new-subscription");
   }
 
-  
   const {
     totalRevenue,
     totalAppointments,
@@ -85,12 +84,14 @@ const DashboardPage = async ({ searchParams }: DashboardPageProps) => {
         </PageHeader>
         <PageContent>
           <StatsCards
-            totalRevenue={totalRevenue.total ? Number(totalRevenue.total) : null}
+            totalRevenue={
+              totalRevenue.total ? Number(totalRevenue.total) : null
+            }
             totalAppointments={totalAppointments.total}
             totalPatients={totalPatients.total}
             totalDoctors={totalDoctors.total}
           />
-          <div className="grid grid-cols-[2.25fr_1fr] gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-[2.25fr_1fr]">
             <AppointmentsChart dailyAppointmentsData={dailyAppointmentsData} />
             <TopDoctors doctors={topDoctors} />
           </div>

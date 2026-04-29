@@ -64,11 +64,11 @@ const AppointmentsChart = ({
         <DollarSign />
         <CardTitle>Agendamentos e Faturamento</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-0">
         <ChartContainer config={chartConfig} className="min-h-[200px]">
           <AreaChart
             data={chartData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            margin={{ top: 20, right: 20, left: 0, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
