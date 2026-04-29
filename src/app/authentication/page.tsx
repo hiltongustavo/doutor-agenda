@@ -9,20 +9,19 @@ import SignInForm from "./components/sign-in-form";
 import SignUpForm from "./components/sign-up-form";
 
 const AuthenticationPage = async () => {
-
   const session = await auth.api.getSession({
-    headers: await headers()
-  })
+    headers: await headers(),
+  });
 
   if (session?.user) {
-    redirect('/dashboard')
+    redirect("/dashboard");
   }
 
-  return ( 
-    <div className="h-screen w-screen flex items-center justify-center">
+  return (
+    <div className="flex h-screen w-screen items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-y-8">
         <Image src="/logo.svg" alt="logo" width={200} height={100} />
-        <Tabs defaultValue="login" className="w-[400px]">
+        <Tabs defaultValue="login" className="w-[400px] px-4">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="login">Login</TabsTrigger>
             <TabsTrigger value="register">Criar conta</TabsTrigger>
@@ -35,9 +34,8 @@ const AuthenticationPage = async () => {
           </TabsContent>
         </Tabs>
       </div>
-    
     </div>
   );
-}
- 
+};
+
 export default AuthenticationPage;
